@@ -1,4 +1,14 @@
 DEBUG.consoleOpenOnErr=false
 eclipse.preferences.version=1
+org.eclipse.debug.ui.Color=208,27,64
+org.eclipse.debug.ui.MemoryHistoryKnownColor=232,232,238
+org.eclipse.debug.ui.MemoryHistoryUnknownColor=164,168,188
+org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND=139,74,106
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+org.eclipse.debug.ui.changedDebugElement=255,128,128
+org.eclipse.debug.ui.consoleBackground=40,42,54
+org.eclipse.debug.ui.errorColor=139,233,253
+org.eclipse.debug.ui.inColor=248,248,242
+org.eclipse.debug.ui.outColor=248,248,242
+overriddenByCSS=,org.eclipse.debug.ui.Color,org.eclipse.debug.ui.MemoryHistoryKnownColor,org.eclipse.debug.ui.MemoryHistoryUnknownColor,org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND,org.eclipse.debug.ui.changedDebugElement,org.eclipse.debug.ui.consoleBackground,org.eclipse.debug.ui.errorColor,org.eclipse.debug.ui.inColor,org.eclipse.debug.ui.outColor,
 preferredTargets=default,org.eclipse.lsp4e.debug.toggleBreakpointTarget\:default|org.eclipse.lsp4e.debug.toggleBreakpointTarget\:org.eclipse.lsp4e.debug.toggleBreakpointTarget|

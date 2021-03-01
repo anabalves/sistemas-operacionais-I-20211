@@ -68,10 +68,10 @@ public class RedesController {
 				String linha = buffer.readLine();
 
 				while (linha != null) {
-					if (linha.contains("flags")) {
+					if (linha.contains("inet")) {
 						resultado = resultado + linha + "\n";
 					}
-					if (linha.contains("netmask")) {
+					if (linha.contains("Ethernet")) {
 						resultado = resultado + linha + "\n";
 					}
 					linha = buffer.readLine();
@@ -156,7 +156,7 @@ public class RedesController {
 
 				
 				while (linha != null) {
-					if (linha.contains("seq")) {
+					if (linha.contains("tempo")) {
 						int inicioSub = linha.indexOf("o="); 
 						int finalSub = linha.indexOf(" ms"); 
 
