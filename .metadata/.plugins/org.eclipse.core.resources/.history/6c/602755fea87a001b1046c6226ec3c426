@@ -1,0 +1,40 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import view.TelaExecutar;
+
+public class BotaoOK implements ActionListener {
+
+	private JTextField tfCaminho;
+	private TelaExecutar telaExecutar;
+
+	public BotaoOK(JTextField tfCaminho, TelaExecutar telaExecutar) {
+		this.tfCaminho = tfCaminho;
+		this.telaExecutar = telaExecutar;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		executaBotaoOK(tfCaminho.getText());
+		
+	}
+
+	private void executaBotaoOK(String text) {
+		try {
+			Runtime.getRuntime().exec("cmd start " + text);
+			telaExecutar.dispose();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "O Windows não pode encontrar '" + text + "'. Certifique-se de que o nome foi digitado corretamente e tente novamente.", text, JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

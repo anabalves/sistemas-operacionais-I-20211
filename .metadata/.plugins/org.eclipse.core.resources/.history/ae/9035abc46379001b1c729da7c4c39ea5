@@ -1,0 +1,59 @@
+package persistence;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
+public class Linux extends SistemaOperacional {
+	public Linux() {
+		super("Linux", "ifconfig", "ping -c 10 www.google.com");
+	}
+	
+	public String adaptadorEthernetIPv4(BufferedReader buffer) {
+		try {
+			AdaptadorEthernet adaptadorEthernet = new AdaptadorEthernet();
+			String resultado = "";
+			
+			String linha = buffer.readLine();
+			
+			while (linha != null) {
+				if (linha.contains("flags")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("inet")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("netmask")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("Ethernet")) {
+					resultado = resultado + linha + "\n";
+				}
+			}
+			
+			return resultado;
+			
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Erro ao obter configurações de IP", "Error", JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+}
+/*para verificar informações de adaptadores ethernet:
+Linux: ifconfig
+para definir quantidade de pings (-n ou -c é o número de iterações, -4 é para forçar a operação em IPv4):
+Exemplo Linux: ping -4 -c 10 www.uol.com.br
+para listar os processos:
+Linux: ps -ef
+para matar processo por PID:
+Linux: kill -9 numero_do_PID
+para matar processo por Nome:
+Linux: pkill -f nome_do_processo
+Exiba todos os dispositivos usando o seguinte comando: ip addr.
+Para listar todas as interfaces de rede e o endereço IP associado, use o comando: ip addr show.
+Você também pode ver informações sobre uma rede individual: ip addr show dev [interface]
+Para listar os endereços IPv4, use: ip -4 addr.*/

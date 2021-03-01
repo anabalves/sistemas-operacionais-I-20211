@@ -1,0 +1,94 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import javax.swing.JOptionPane;
+
+public class ProcessosController {
+	
+	private Process processo;
+	private InputStream fluxo;
+	private InputStreamReader leitor;
+	private BufferedReader buffer;
+
+	public ProcessosController() {
+		super();
+	}
+
+	public String getOS() {
+		String os = System.getProperty("os.name");
+		return os;
+	}
+
+	public String listarProcessos(String sistemaOperacional) {
+		String resultado = "";
+
+		if (sistemaOperacional.contains("Windows")) {
+			try {
+				processo = Runtime.getRuntime().exec("tasklist");
+				fluxo = processo.getInputStream();
+				leitor = new InputStreamReader(fluxo);
+				buffer = new BufferedReader(leitor);
+
+				String linha = buffer.readLine();
+
+				while (linha != null) {
+					
+					System.out.println(linha);
+
+					linha = buffer.readLine();
+				}
+				System.out.println();
+				
+				fluxo.close();
+				leitor.close();
+				buffer.close();
+
+			} catch (IOException e) {
+				String msgErro = e.getMessage();
+				System.err.println(msgErro);
+			}
+		} else if (sistemaOperacional.contains("Linux")) {
+			try {
+				processo = Runtime.getRuntime().exec("ps");
+				fluxo = processo.getInputStream();
+				leitor = new InputStreamReader(fluxo);
+				buffer = new BufferedReader(leitor);
+				
+				String linha = buffer.readLine();
+
+				while (linha != null) {
+					
+					System.out.println(linha);
+
+					linha = buffer.readLine();
+				}
+				
+				System.out.println();
+				
+				fluxo.close();
+				leitor.close();
+				buffer.close();
+			} catch (IOException e) {
+				String msgErro = e.getMessage();
+				System.err.println(msgErro);
+			}
+		} else {
+			JOptionPane.showMessageDialog(null,  "Configurações de sistema não encontradas", "Error",JOptionPane.ERROR_MESSAGE);
+		}
+		return null;
+		
+	}
+
+	public String matarProcessoPorNome(String sistemaOperacional, String processoNome) {
+		return null;
+	}
+
+	public String matarProcessoPorPID(String sistemaOperacional, int processoPID) {
+		return null;
+	}
+
+}

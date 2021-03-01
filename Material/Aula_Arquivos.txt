@@ -1,0 +1,56 @@
+	public void criaArq(String path, String arq) throws IOException {
+		File dir = new File(path);
+		File arquivo = new File(path, arq + ".txt");
+		if (dir.exists()){
+			boolean arquivoExiste = false;
+			if (arquivo.exists()){
+				arquivoExiste = true;
+			}
+			String conteudo = geraConteudoTxt();
+			FileWriter fw = 
+				new FileWriter(arquivo, arquivoExiste);
+			PrintWriter pw = new PrintWriter(fw);
+			pw.write(conteudo);
+			pw.flush();
+			pw.close();
+			fw.close();
+		} else {
+			throw new IOException("Diretório Inválido");
+		}
+	}
+
+	@Override
+	public void leArq(String absolutePath) throws IOException {
+		File arquivo = new File(absolutePath);
+		if (arquivo.exists()){
+			FileInputStream fluxo =
+				new FileInputStream(arquivo);
+			InputStreamReader leitor = 
+				new InputStreamReader(fluxo);
+			BufferedReader buffer = 
+				new BufferedReader(leitor);
+			String linha = buffer.readLine();
+			while (linha != null){
+				System.out.println(linha);
+				linha = buffer.readLine();
+			}
+			buffer.close();
+			leitor.close();
+			fluxo.close();
+		} else {
+			throw new IOException("Arquivo inválido");
+		}
+	}
+
+	private String geraConteudoTxt(){
+		StringBuffer buffer = new StringBuffer();
+		String linha = "";
+		while (!linha.equals("fim")){
+			linha = JOptionPane.showInputDialog(null,
+					"Digite uma frase", "Entrada",
+					JOptionPane.INFORMATION_MESSAGE);
+			buffer.append(linha+"\r\n");
+		}
+		return buffer.toString();
+	}
+

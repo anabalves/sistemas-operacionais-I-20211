@@ -1,0 +1,17 @@
+package view;
+
+import controller.ProcessosController;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		ProcessosController procController = new ProcessosController();
+//		String os = procController.getOS();
+//		System.out.println(os);
+		
+		String process = "C:\\Windows\\writ.exe";
+		procController.callProcess(process);
+	}
+
+}

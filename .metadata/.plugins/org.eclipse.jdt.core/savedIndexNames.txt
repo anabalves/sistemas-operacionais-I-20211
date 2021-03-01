@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+D:\Documentos\FATEC\3-Semestre\Sistemas Operacionais I - LEANDRO COLEVATI DOS SANTOS\.metadata\.plugins\org.eclipse.jdt.core
+215072431.index
+1308279948.index
+2061051789.index
+2615211232.index
+48866650.index
+1947411913.index
+2833622980.index
+1978570188.index
+1899068051.index
+4075732872.index

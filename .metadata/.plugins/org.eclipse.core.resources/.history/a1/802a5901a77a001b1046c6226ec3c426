@@ -1,0 +1,31 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+
+import view.TelaExecutar;
+
+public class BotaoOK implements ActionListener {
+
+	private JTextField tfCaminho;
+	private TelaExecutar telaExecutar;
+
+	public BotaoOK(JTextField tfCaminho, TelaExecutar telaExecutar) {
+		this.tfCaminho = tfCaminho;
+		this.telaExecutar = telaExecutar;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		executaBotaoOK(tfCaminho.getText());
+		
+	}
+
+	private void executaBotaoOK(String text) {
+		Runtime.getRuntime().exec()
+		
+	}
+
+}

@@ -1,0 +1,55 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+
+public class TelaBusca extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField tfCaminho;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaBusca frame = new TelaBusca();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaBusca() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 114);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		tfCaminho = new JTextField();
+		tfCaminho.setBounds(10, 11, 414, 20);
+		contentPane.add(tfCaminho);
+		tfCaminho.setColumns(10);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("Lucida Sans Typewriter", Font.PLAIN, 11));
+		btnBuscar.setBounds(10, 42, 89, 23);
+		contentPane.add(btnBuscar);
+	}
+}

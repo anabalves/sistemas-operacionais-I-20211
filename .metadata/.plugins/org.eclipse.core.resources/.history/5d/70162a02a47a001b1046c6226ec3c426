@@ -1,0 +1,26 @@
+package controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+
+import view.TelaExecutar;
+
+public class BotaoOK implements ActionListener {
+
+	private JTextField textField;
+	private TelaExecutar telaExecutar;
+
+	public BotaoOK(JTextField textField, TelaExecutar telaExecutar) {
+		this.textField = textField;
+		this.telaExecutar = telaExecutar;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

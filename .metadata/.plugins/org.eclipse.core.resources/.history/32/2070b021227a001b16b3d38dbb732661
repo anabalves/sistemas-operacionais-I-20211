@@ -1,0 +1,11 @@
+package model;
+
+public class Pizza {
+
+	private String nome;
+	private String modicaficoes;
+	private double preco;
+	private String tipo;
+	private boolean bordaRecheada;
+	
+}

@@ -1,0 +1,53 @@
+package view;
+
+import javax.swing.JOptionPane;
+
+import controller.ProcessosController;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ProcessosController processosController = new ProcessosController();
+
+		int opc = 0;
+
+		do {
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de uma das opções\n "
+					+ "1- Adaptador Ethernet e o IPv4\n "
+					+ "2- Ping\n "
+					+ "9- Finalizar Programa!", JOptionPane.QUESTION_MESSAGE));
+			
+				switch (opc) {
+				case 1:
+					processosController.listarProcessos();
+					break;
+				case 2:
+					displayViewKillProcess();
+					break;
+				case 9:
+					break;
+				default:
+					JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida!", "Erro", JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+
+		} while (opc != 9);
+	}
+
+	public static void displayViewKillProcess() {
+		while (true) {
+			String input = JOptionPane.showInputDialog(null, "Digite o nome ou PID do processo para matar-lo: ",
+					"Matar Processo", JOptionPane.QUESTION_MESSAGE);
+
+			if (input == null)
+				return;
+
+			processosController.matarProcessos(input);
+		}
+	}
+
+	private static boolean isValidInput(String input) {
+		return input.matches("\\d");
+	}
+}

@@ -1,0 +1,17 @@
+package controller;
+
+public class ProcessosController {
+
+	public ProcessosController() {
+		super();
+	}
+
+	// Retorne o S.O que está em execução na máquina
+	public String getOS() {
+		String os = System.getProperty("os.name");
+		String arch = System.getProperty("os.arch");
+		String version = System.getProperty("os.version");
+		String language = System.getProperty("user.language");
+		return os + " - v. " + version + " - arch. " + arch + " - idioma: " + language;
+	}
+}

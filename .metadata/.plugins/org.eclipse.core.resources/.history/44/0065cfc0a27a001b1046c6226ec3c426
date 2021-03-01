@@ -1,0 +1,13 @@
+package controller;
+
+import javax.swing.JTextField;
+
+import view.TelaExecutar;
+
+public class BotaoOK {
+
+	public BotaoOK(JTextField textField, TelaExecutar telaExecutar) {
+
+	}
+
+}

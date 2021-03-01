@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;controller.BotaoOk&apos; to &apos;BotaoOK&apos;&#x0D;&#x0A;- Original project: &apos;TAREFA_02_PROCESSOS_EXERC_03&apos;&#x0D;&#x0A;- Original element: &apos;controller.BotaoOk&apos;&#x0D;&#x0A;- Renamed element: &apos;controller.BotaoOK&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BotaoOk&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;controller{BotaoOk.java[BotaoOk" matchStrategy="1" name="BotaoOK" qualified="false" references="true" similarDeclarations="false" stamp="1614612154846" textual="false" version="1.0"/>
+</session>

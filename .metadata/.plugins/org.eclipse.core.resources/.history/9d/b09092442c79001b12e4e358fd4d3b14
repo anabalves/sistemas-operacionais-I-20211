@@ -1,0 +1,14 @@
+package controller;
+
+public class ProcessosController {
+
+	public ProcessosController() {
+		super();
+	}
+
+	// Retorne o S.O que está em execução na máquina
+	public String getOS() {
+		String os = System.getProperty("os.name");
+		return os;
+	}
+}

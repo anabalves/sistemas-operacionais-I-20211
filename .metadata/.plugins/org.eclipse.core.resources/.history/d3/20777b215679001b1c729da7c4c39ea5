@@ -1,0 +1,15 @@
+package controller;
+
+public class RedesController {
+
+	public void getIP() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void getPing() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

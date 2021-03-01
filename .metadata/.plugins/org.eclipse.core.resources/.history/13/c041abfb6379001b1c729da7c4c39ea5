@@ -1,0 +1,48 @@
+package persistence;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
+public class Linux extends SistemaOperacional {
+	public Linux() {
+		super("Linux", "ifconfig", "ping -c 10 www.google.com");
+	}
+	
+	public String adaptadorEthernetIPv4(BufferedReader buffer) {
+		try {
+			String resultado = "";
+			
+			String linha = buffer.readLine();
+			
+			while (linha != null) {
+				if (linha.contains("flags")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("inet")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("netmask")) {
+					resultado = resultado + linha + "\n";
+				}
+				if (linha.contains("Ethernet")) {
+					resultado = resultado + linha + "\n";
+				}
+			}
+			
+			return resultado;
+			
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Erro ao obter configurações de IP", "Error", JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public String PingOS(BufferedReader buffer) {
+		return null;
+		
+	}
+}
