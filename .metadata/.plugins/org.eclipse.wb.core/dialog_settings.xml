@@ -6,4 +6,10 @@
 		<item key="width" value="530"/>
 		<item key="height" value="346"/>
 	</section>
+	<section name="org.eclipse.wb.internal.core.editor.actions.errors.ErrorsDialog">
+		<item key="x" value="382"/>
+		<item key="y" value="116"/>
+		<item key="width" value="676"/>
+		<item key="height" value="637"/>
+	</section>
 </section>

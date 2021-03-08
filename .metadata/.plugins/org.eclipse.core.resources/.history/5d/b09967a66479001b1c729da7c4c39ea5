@@ -1,9 +1,0 @@
-package persistence;
-
-public class Windows {
-
-	public Windows() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

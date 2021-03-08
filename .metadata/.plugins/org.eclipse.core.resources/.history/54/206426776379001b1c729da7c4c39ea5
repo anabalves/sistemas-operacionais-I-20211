@@ -1,9 +1,0 @@
-package persistence;
-
-public class Linux {
-
-	public Linux() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

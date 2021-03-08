@@ -1,9 +1,0 @@
-package controller;
-
-public class ProcessosController {
-
-	public ProcessosController() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

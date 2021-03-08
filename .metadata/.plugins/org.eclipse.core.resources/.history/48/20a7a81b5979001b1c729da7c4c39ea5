@@ -1,9 +1,0 @@
-package persistence;
-
-public class SistemaOperacional {
-
-	public SistemaOperacional() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
