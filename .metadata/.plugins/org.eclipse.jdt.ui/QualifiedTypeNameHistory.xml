@@ -51,4 +51,8 @@
     <fullyQualifiedTypeName name="java.awt.Toolkit"/>
     <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
     <fullyQualifiedTypeName name="controller.SapoThread"/>
+    <fullyQualifiedTypeName name="controller.ThreadCarro"/>
+    <fullyQualifiedTypeName name="controller.ThreadServidorMultiprocessamento"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
+    <fullyQualifiedTypeName name="controller.ThreadOvercooked"/>
 </qualifiedTypeNameHistroy>

@@ -7,7 +7,7 @@ public class SapoThread extends Thread {
 	private int saltoTotal;
 	private boolean fimCorrida;
 	private int totalCorrida = 80;
-	private int posicao = 1;
+	private static int posicao = 1;
 	
 	public SapoThread(int i) {
 		this.distanciaMaxima = 0;
