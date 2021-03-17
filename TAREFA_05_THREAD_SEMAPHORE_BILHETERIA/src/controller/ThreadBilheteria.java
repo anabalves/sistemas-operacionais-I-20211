@@ -57,12 +57,12 @@ public class ThreadBilheteria extends Thread {
 	private boolean processoCompra() {
 		this.tempoEsperaCompra = getRandomTime(3000, 1000);
 		try {
-			Thread.sleep(this.tempoEsperaCompra);
+			sleep(this.tempoEsperaCompra);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		if (this.tempoEsperaCompra >= 2500) {
-			System.out.println("A sessão do cliente #" + idPessoa + " estourou o tempo após " + this.tempoEsperaCompra + "ms. e por isso não poderá fazer a compra :/");
+			System.out.println("TimeOut: A sessão do cliente #" + idPessoa + " estourou o tempo após " + this.tempoEsperaCompra + "ms. e por isso não poderá fazer a compra :/");
 			return false;
 		} else {
 			System.out.println("O cliente #" + idPessoa + " realizou uma solicitação de compra");
