@@ -55,4 +55,6 @@
     <fullyQualifiedTypeName name="controller.ThreadServidorMultiprocessamento"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
     <fullyQualifiedTypeName name="controller.ThreadOvercooked"/>
+    <fullyQualifiedTypeName name="controller.ThreadBilheteria"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>
