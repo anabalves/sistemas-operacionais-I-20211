@@ -52,7 +52,7 @@ public class ThreadBanco extends Thread {
 		System.out.println("Iniciando saque na conta " + codigoConta + " no valor de R$ " + valor);
 		try {
 			Thread.sleep(tempo);
-			saldoConta += valor;
+			saldoConta -= valor;
 			System.out.println("Saldo atual da conta " + codigoConta + " é de "+ saldoConta);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -64,7 +64,7 @@ public class ThreadBanco extends Thread {
 		System.out.println("Iniciando depósito na conta " + codigoConta  + " no valor de R$ " + valor);
 		try {
 			Thread.sleep(tempo);
-			saldoConta -= valor;
+			saldoConta += valor;
 			System.out.println("Saldo atual da conta " + codigoConta + " é de "+ saldoConta);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
