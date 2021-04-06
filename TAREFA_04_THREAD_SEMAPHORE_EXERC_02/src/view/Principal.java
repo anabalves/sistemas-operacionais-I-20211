@@ -11,8 +11,8 @@ public class Principal {
 		int permissoes = 1;
 		Semaphore semaforo = new Semaphore(permissoes);
 		String nomePrato = "";
-	    int calcSegIni = 0;
-	    int calcSegFim = 0;
+		int calcSegIni = 0;
+		int calcSegFim = 0;
 
 		for (int idPrato = 1; idPrato < 6; idPrato++) {
 			if (idPrato % 2 == 0) {
@@ -24,8 +24,9 @@ public class Principal {
 				calcSegIni = 500;
 				calcSegFim = 800;
 			}
-			
-			ThreadOvercooked threadOvercooked = new ThreadOvercooked(idPrato, semaforo, nomePrato, calcSegIni, calcSegFim);
+
+			ThreadOvercooked threadOvercooked = new ThreadOvercooked(idPrato, semaforo, nomePrato, calcSegIni,
+					calcSegFim);
 			threadOvercooked.start();
 		}
 
