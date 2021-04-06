@@ -6,5 +6,7 @@ Considerando o esquema de escalonamento não preemptivo chamado FCFS*, faça uma
 *FCFS (First-Come First-Served) = O processador é alocado seguindo a ordem de chegada dos processos à fila de processos prontos.
 
 Diagrama de Gant FCFS
+
 ![Diagrama de Gant FCFS](https://i.imgur.com/BwSBsO4.png)
+
 Fonte: LEITE; Andreza. Escalonamento de Processos. Disponível em: [http://www.univasf.edu.br/~andreza.leite/aulas/SO/ProcessosEscalonamento.pdf](http://www.univasf.edu.br/~andreza.leite/aulas/SO/ProcessosEscalonamento.pdf "http://www.univasf.edu.br/~andreza.leite/aulas/SO/ProcessosEscalonamento.pdf"). Acesso em 29 de março de 2021.
