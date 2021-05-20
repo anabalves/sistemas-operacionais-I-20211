@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            z-index: 9;
+            align-items: center;
+            overflow: hidden;
+            background-color: #008CDB;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            margin: 5px;
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .navbar a.active {
+            background-color: #003f8c;
+            color: white;
+        }
+
+        .navbar .logo img {
+            align-items: center;
+            width: 150px;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        .navbar .navbar-right a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 0;
+            text-decoration: none;
+            color: white;
+            background: #003f8c;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .header-content {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            margin-bottom: 10px;
+            font-size: 4rem;
+        }
+
+        .header-content p {
+            font-weight: bold;
+        }
+
+        .docker {
+            padding: 16px;
+        }
+
+        .docker .docker-cards {
+            display: flex;
+            margin: auto;
+            max-width: 950px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .docker .docker-title {
+            width: 100%;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .docker .card {
+            width: 250px;
+            height: 550px;
+            background: #E9EBEE;
+            border-radius: 24px 0px;
+            margin: 25px;
+            position: relative;
+        }
+
+        .docker .card-image {
+            width: 250px;
+            height: 200px;
+            border-radius: 24px 0 0 0;
+            object-fit: cover;
+        }
+
+        .docker .card-content {
+            padding: 0 15px;
+        }
+
+        .docker .card-content p {
+            text-align: justify;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 0;
+            background-color: #003F8C;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #008CDB;
+            text-align: center;
+        }
+
+        .footer a {
+            margin: 5px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class="logo" href="index.html"><img src="https://i.imgur.com/7zCOZLJ.png" alt=""></a>
+        <div class="navbar-right">
+            <a class="active" href="index.html">Index</a>
+            <a href="docker.html">Docker</a>
+            <a href="comandos.html">Principais Comandos Docker</a>
+            <a href="dockerfile.html">Dockerfile</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header-content">
+            <h1>Projeto HTML Docker</h1>
+            <p>Essa página apresentará uma breve apresentação de <strong>Docker</strong> e seus comandos</p>
+            <a href="https://www.docker.com/" class="button">Saiba Mais</a>
+        </div>
+        <section id="docker" class="docker">
+            <h1 class="docker-title">O que é Docker?</h1>
+            <p>Docker se refere a muitas coisas. Isso inclui:
+            <ul>
+                <li>um projeto da comunidade open source;</li>
+                <li>as ferramentas resultantes desse projeto;</li>
+                <li>a empresa Docker Inc., principal apoiadora do projeto;</li>
+                <li>e as ferramentas compatíveis formalmente com a empresa.</li>
+            </ul>
+            O fato de que as tecnologias e a empresa têm o mesmo nome pode
+            causar uma certa confusão.</p>
+            <p>Veja uma simples explicação:</p>
+            <div class="docker-cards">
+                <div class="card">
+                    <img class="card-image" src="https://i.imgur.com/eR2xbkS.png">
+                    <div class="card-content">
+                        <p>O software de TI "Docker” é uma tecnologia de containerização para criação e uso de
+                            containers Linux®.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-image" src="https://i.imgur.com/BpdpHE5.png">
+                    <div class="card-content">
+                        <p>A comunidade open source do Docker trabalha gratuitamente para melhorar essas tecnologias
+                            para todos os usuários.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-image" src="https://i.imgur.com/wA5ahzL.png">
+                    <div class="card-content">
+                        <p>A empresa Docker Inc. se baseia no trabalho realizado pela comunidade do Docker, tornando-o
+                            mais seguro, e compartilha os avanços com a comunidade em geral. Depois, ela oferece aos
+                            clientes corporativos o suporte necessário para as tecnologias que foram aprimoradas e
+                            fortalecidas.</p>
+                    </div>
+                </div>
+            </div>
+            <p>Com o Docker, é possível lidar com os containers como se fossem máquinas virtuais modulares e
+                extremamente leves. Além disso, os containers oferecem maior flexibilidade para você criar, implantar,
+                copiar e migrar um container de um ambiente para outro. Isso otimiza as aplicações na cloud.</p>
+        </section>
+        <div class="message">
+            <h1>Acelere o desenvolvimento de sua aplicação hoje mesmo.</h1>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/anabalves">© 2021 Copyright: AnaBalves</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

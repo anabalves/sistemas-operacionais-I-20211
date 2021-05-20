@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            z-index: 9;
+            align-items: center;
+            overflow: hidden;
+            background-color: #008CDB;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            margin: 5px;
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .navbar a.active {
+            background-color: #003f8c;
+            color: white;
+        }
+
+        .navbar .logo img {
+            align-items: center;
+            width: 150px;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        .navbar .navbar-right a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 0;
+            text-decoration: none;
+            color: white;
+            background: #003f8c;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .header-content {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            margin-bottom: 10px;
+            font-size: 4rem;
+        }
+
+        .docker {
+            padding: 16px;
+            text-align: justify;
+        }
+
+        .docker .docker-title {
+            width: 100%;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .docker ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .docker ul li {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            margin: 3px 0;
+            color: rgb(112, 112, 112);
+            font-weight: bold;
+        }
+
+        .docker li svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 0;
+            background-color: #003F8C;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #008CDB;
+            text-align: center;
+        }
+
+        .footer a {
+            margin: 5px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class="logo" href="index.html"><img src="https://i.imgur.com/7zCOZLJ.png" alt=""></a>
+        <div class="navbar-right">
+            <a href="index.html">Index</a>
+            <a href="docker.html">Docker</a>
+            <a class="active" href="comandos.html">Principais Comandos Docker</a>
+            <a href="dockerfile.html">Dockerfile</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header-content">
+            <h1>Projeto HTML Docker</h1>
+            <a href="https://www.docker.com/" class="button">Saiba Mais</a>
+        </div>
+        <section id="docker" class="docker">
+            <h1 class="docker-title">Comandos Docker</h1>
+            <ul>
+                <li><i data-feather="circle"></i><strong>docker attach</strong>– Acessar dentro do container e trabalhar a partir dele.</li>
+                <li><i data-feather="circle"></i><strong>docker build</strong>– A partir de instruções de um arquivo Dockerfile eu possa criar uma imagem.</li>
+                <li><i data-feather="circle"></i><strong>docker commit</strong>– Cria uma imagem a partir de um container.</li>
+                <li><i data-feather="circle"></i><strong>docker cp</strong>– Copia arquivos ou diretórios do container para o host.</li>
+                <li><i data-feather="circle"></i><strong>docker create</strong>– Cria um novo container.</li>
+                <li><i data-feather="circle"></i><strong>docker diff</strong>– Exibe as alterações feitas no filesystem do container.</li>
+                <li><i data-feather="circle"></i><strong>docker events</strong>– Exibe os eventos do container em tempo real.</li>
+                <li><i data-feather="circle"></i><strong>docker exec</strong>– Executa uma instrução dentro do container que está rodando sem precisar atachar nele.</li>
+                <li><i data-feather="circle"></i><strong>docker export</strong>– Exporta um container para um arquivo .tar.</li>
+                <li><i data-feather="circle"></i><strong>docker history</strong>– Exibe o histórico de comandos que foram executados dentro do container.</li>
+                <li><i data-feather="circle"></i><strong>docker images</strong>– Lista as imagens disponíveis no host.</li>
+                <li><i data-feather="circle"></i><strong>docker import</strong>– Importa uma imagem .tar para o host.</li>
+                <li><i data-feather="circle"></i><strong>docker info</strong>– Exibe as informações sobre o host.</li>
+                <li><i data-feather="circle"></i><strong>docker inspect</strong>– Exibe r o json com todas as configurações do container.</li>
+                <li><i data-feather="circle"></i><strong>docker kill</strong>– Da Poweroff no container.</li>
+                <li><i data-feather="circle"></i><strong>docker load</strong>– Carrega a imagem de um arquivo .tar.</li>
+                <li><i data-feather="circle"></i><strong>docker login</strong>– Registra ou faz o login em um servidor de registry.</li>
+                <li><i data-feather="circle"></i><strong>docker logout</strong>– Faz o logout de um servidor de registry.</li>
+                <li><i data-feather="circle"></i><strong>docker logs</strong>– Exibe os logs de um container.</li>
+                <li><i data-feather="circle"></i><strong>docker port</strong>– Abre uma porta do host e do container.</li>
+                <li><i data-feather="circle"></i><strong>docker network</strong>– Gerenciamento das redes do Docker.</li>
+                <li><i data-feather="circle"></i><strong>docker node</strong>– Gerenciamento dos nodes do Docker Swarm.</li>
+                <li><i data-feather="circle"></i><strong>docker pause</strong>– Pausa o container.</li>
+                <li><i data-feather="circle"></i><strong>docker port</strong>– Lista as portas mapeadas de um container.</li>
+                <li><i data-feather="circle"></i><strong>docker ps</strong>– Lista todos os containers.</li>
+                <li><i data-feather="circle"></i><strong>docker pull</strong>– Faz o pull de uma imagem a partir de um servidor de registry.</li>
+                <li><i data-feather="circle"></i><strong>docker push</strong>– Faz o push de uma imagem a partir de um servidor de registry.</li>
+                <li><i data-feather="circle"></i><strong>docker rename</strong>– Renomeia um container existente.</li>
+                <li><i data-feather="circle"></i><strong>docker restart</strong>– Restarta um container que está rodando ou parado.</li>
+                <li><i data-feather="circle"></i><strong>docker rm</strong>– Remove um ou mais containeres.</li>
+                <li><i data-feather="circle"></i><strong>docker rmi</strong>– Remove uma ou mais imagens.</li>
+                <li><i data-feather="circle"></i><strong>docker run</strong>– Executa um comando em um novo container.</li>
+                <li><i data-feather="circle"></i><strong>docker save</strong>– Salva a imagem em um arquivo .tar.</li>
+                <li><i data-feather="circle"></i><strong>docker search</strong>– Procura por uma imagem no Docker Hub.</li>
+                <li><i data-feather="circle"></i><strong>docker service</strong>– Gernciamento dos serviços do Docker.</li>
+                <li><i data-feather="circle"></i><strong>docker start</strong>– Inicia um container que esteja parado.</li>
+                <li><i data-feather="circle"></i><strong>docker stats</strong>– Exibe informações de uso de CPU, memória e rede.</li>
+                <li><i data-feather="circle"></i><strong>docker stop</strong>– Para um container que esteja rodando.</li>
+                <li><i data-feather="circle"></i><strong>docker swarm</strong>– Clusterização das aplicações em uma orquestração de várias containers, aplicações junto.</li>
+                <li><i data-feather="circle"></i><strong>docker tag</strong>– Coloca tag em uma imagem para o repositorio.</li>
+                <li><i data-feather="circle"></i><strong>docker top</strong>– Exibe os processos rodando em um container.</li>
+                <li><i data-feather="circle"></i><strong>docker unpause</strong>– Inicia um container que está em pause.</li>
+                <li><i data-feather="circle"></i><strong>docker update</strong>– Atualiza a configuração de um ou mais containers.</li>
+                <li><i data-feather="circle"></i><strong>docker version</strong>– Exibe as versões de API, Client e Server do host.</li>
+                <li><i data-feather="circle"></i><strong>docker volume</strong>– Gerenciamento dos volumes no Docker.</li>
+                <li><i data-feather="circle"></i><strong>docker wait</strong>– Aguarda o retorno da execução de um container para iniciar esse container.</li>
+            </ul>
+            <h1 class="docker-title">Obs.: É possível ver todos os comandos que o Docker possui, tendo o docker instalado, basta digitar no terminal docker --help</h1>
+        </section>
+        <div class="message">
+            <h1>Acelere o desenvolvimento de sua aplicação hoje mesmo.</h1>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/anabalves">© 2021 Copyright: AnaBalves</a>
+        </div>
+    </div>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

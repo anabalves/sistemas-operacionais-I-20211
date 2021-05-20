@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            z-index: 9;
+            align-items: center;
+            overflow: hidden;
+            background-color: #008CDB;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            margin: 5px;
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .navbar a.active {
+            background-color: #003f8c;
+            color: white;
+        }
+
+        .navbar .logo img {
+            align-items: center;
+            width: 150px;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        .navbar .navbar-right a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 0;
+            text-decoration: none;
+            color: white;
+            background: #003f8c;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .header-content {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            margin-bottom: 10px;
+            font-size: 4rem;
+        }
+
+        .docker {
+            padding: 16px;
+            text-align: justify;
+        }
+
+        .docker .docker-title {
+            width: 100%;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 0;
+            background-color: #003F8C;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #008CDB;
+            text-align: center;
+        }
+
+        .footer a {
+            margin: 5px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class="logo" href="index.html"><img src="https://i.imgur.com/7zCOZLJ.png" alt=""></a>
+        <div class="navbar-right">
+            <a href="index.html">Index</a>
+            <a class="active" href="docker.html">Docker</a>
+            <a href="comandos.html">Principais Comandos Docker</a>
+            <a href="dockerfile.html">Dockerfile</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header-content">
+            <h1>Projeto HTML Docker</h1>
+            <a href="https://www.docker.com/" class="button">Saiba Mais</a>
+        </div>
+        <section id="docker" class="docker">
+            <h1 class="docker-title">Como o Docker funciona?</h1>
+            <p>A tecnologia Docker usa o kernel do Linux e recursos do kernel como Cgroups e namespaces para segregar
+                processos. Assim, eles podem ser executados de maneira independente. O objetivo dos containers é criar
+                essa independência: a habilidade de executar diversos processos e aplicações separadamente para utilizar
+                melhor a infraestrutura e, ao mesmo tempo, manter a segurança que você teria em sistemas separados.</p>
+            <p>As ferramentas de container, incluindo o Docker, fornecem um modelo de implantação com base em imagem.
+                Isso facilita o compartilhamento de uma aplicação ou conjunto de serviços, incluindo todas as
+                dependências deles em vários ambientes. O Docker também automatiza a implantação da aplicação (ou de
+                conjuntos de processos que constituem uma aplicação) dentro desse ambiente de container.</p>
+            <p>Essas ferramentas baseadas nos containers Linux (o que faz com que o Docker seja exclusivo e fácil de
+                usar) oferecem aos usuários acesso sem precedentes a aplicações, além da habilidade de implantar com
+                rapidez e de ter total controle sobre as versões e distribuição.</p>
+        </section>
+        <div class="message">
+            <h1>Acelere o desenvolvimento de sua aplicação hoje mesmo.</h1>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/anabalves">© 2021 Copyright: AnaBalves</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
