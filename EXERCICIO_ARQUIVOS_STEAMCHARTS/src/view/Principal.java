@@ -17,8 +17,6 @@ public class Principal {
 		int op1Ano;
 		String op1Mes;
 		Double op1MediaJogadoresAtivos;
-		String path = "C:\\temp";
-		String nome = "SteamCharts.csv";
 		int op2Ano;
 		String op2Mes;
 		String op2Dir;
@@ -37,7 +35,7 @@ public class Principal {
 				op1Mes = JOptionPane.showInputDialog(null, "Digite o mês: ");
 				op1MediaJogadoresAtivos = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a média de jogadores: "));
 				try {
-					steamController.filtraConsole(path, nome, op1Ano, op1Mes, op1MediaJogadoresAtivos);
+					steamController.filtraConsole(op1Ano, op1Mes, op1MediaJogadoresAtivos);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

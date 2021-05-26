@@ -15,73 +15,78 @@ import javax.swing.JOptionPane;
 
 public class SteamController implements ISteamController {
 
+	private static final String ARQ_STEAM = "C:\\temp\\SteamCharts.csv";
+
 	public SteamController() {
 		super();
 	}
 
 	@Override
-	public void filtraConsole(String path, String nome, int op1Ano, String op1Mes, Double op1MediaJogadoresAtivos)
-			throws IOException {
-		File dir = new File(path);
-		if (dir.exists() && dir.isDirectory()) {
-			File arq = new File(path, nome);
-			if (arq.exists() && arq.isFile()) {
-				FileInputStream fluxo = new FileInputStream(arq);
-				InputStreamReader leitor = new InputStreamReader(fluxo);
-				BufferedReader buffer = new BufferedReader(leitor);
-				String linha = buffer.readLine();
-				List<List<String>> rows = new ArrayList<>();
-				List<String> headers = Arrays.asList("Código", "Nome do jogo", "Média de jogadores ativos");
-				rows.add(headers);
-				int contador = 0;
-				while (linha != null) {
-					String[] FiltraConsole = linha.split(",");
-					if (FiltraConsole[1].contains(Integer.toString(op1Ano)) && FiltraConsole[2].equalsIgnoreCase(op1Mes)
-							&& Double.parseDouble(FiltraConsole[3]) >= op1MediaJogadoresAtivos) {
-						contador++;
-						String codigo = Integer.toString(contador);
-						rows.add(Arrays.asList(codigo, FiltraConsole[0], FiltraConsole[3]));
-					}
-					linha = buffer.readLine();
+	public void filtraConsole(int op1Ano, String op1Mes, Double op1MediaJogadoresAtivos) throws IOException {
+		File arq = new File(ARQ_STEAM);
+		if (arq.exists() && arq.isFile()) {
+			FileInputStream fluxo = new FileInputStream(arq);
+			InputStreamReader leitor = new InputStreamReader(fluxo);
+			BufferedReader buffer = new BufferedReader(leitor);
+			String linha = buffer.readLine();
+			List<List<String>> rows = new ArrayList<>();
+			List<String> headers = Arrays.asList("Código", "Nome do jogo", "Média de jogadores ativos");
+			rows.add(headers);
+			int contador = 0;
+			while (linha != null) {
+				String[] FiltraConsole = linha.split(",");
+				if (FiltraConsole[1].contains(Integer.toString(op1Ano)) && FiltraConsole[2].equalsIgnoreCase(op1Mes)
+						&& Double.parseDouble(FiltraConsole[3]) >= op1MediaJogadoresAtivos) {
+					contador++;
+					String codigo = Integer.toString(contador);
+					rows.add(Arrays.asList(codigo, FiltraConsole[0], FiltraConsole[3]));
 				}
-				System.out.println(formatAsTable(rows));
-				buffer.close();
-				leitor.close();
-				fluxo.close();
-			} else {
-				throw new IOException("Arquivo inválido");
+				linha = buffer.readLine();
 			}
+			System.out.println(formatAsTable(rows));
+			buffer.close();
+			leitor.close();
+			fluxo.close();
 		} else {
-			throw new IOException("Diretório inválido");
+			throw new IOException("Arquivo inválido");
 		}
 	}
 
 	@Override
 	public void filtraArquivo(String op2Dir, String op2NomeArquivo, int op2Ano, String op2Mes) throws IOException {
-		File dir = new File(op2Dir);
-		File arq = new File(op2Dir, op2NomeArquivo + ".csv");
-		if (dir.exists() && dir.isDirectory()) {
-			boolean existe = false;
-			if (arq.exists()) {
-				existe = true;
+		File arq = new File(ARQ_STEAM);
+		if (arq.exists() && arq.isFile()) {
+			String conteudo = geraConteudo(op2Ano, op2Mes);
+			File dir = new File(op2Dir);
+			if (dir.exists() && dir.isDirectory()) {
+				File newArq = new File(op2Dir, op2NomeArquivo + ".csv");
+				if (!newArq.exists()) {
+					geraArquivo(conteudo, newArq);
+				} else {
+					throw new IOException("Arquivo já existente");
+				}
+			} else {
+				throw new IOException("Diretório inválido");
 			}
-			String conteudo = geraCsv(op2Ano, op2Mes);
-			FileWriter fileWriter = new FileWriter(arq, existe);
-			PrintWriter printWriter = new PrintWriter(fileWriter);
-			printWriter.write(conteudo);
-			printWriter.flush();
-			printWriter.close();
-			fileWriter.close();
-			JOptionPane.showMessageDialog(null, "Arquivo " + op2NomeArquivo + ".csv salvo com sucesso, na pasta => " + op2Dir);
 		} else {
-			throw new IOException("Diretório inválido");
+			throw new IOException("Arquivo não encontrado");
 		}
 	}
 
-	private String geraCsv(int op2Ano, String op2Mes) throws IOException {
+	private void geraArquivo(String conteudo, File newArq) throws IOException {
+		FileWriter fileWriter = new FileWriter(newArq, false);
+		PrintWriter printWriter = new PrintWriter(fileWriter);
+		printWriter.write(conteudo);
+		printWriter.flush();
+		printWriter.close();
+		fileWriter.close();
+		JOptionPane.showMessageDialog(null,
+				"Arquivo .csv salvo com sucesso!");
+	}
+
+	private String geraConteudo(int op2Ano, String op2Mes) throws IOException {
 		String salvar = "Código;Nome do jogo;Média de jogadores ativos\n";
-		String path = "C:\\temp\\SteamCharts.csv";
-		File arq = new File(path);
+		File arq = new File(ARQ_STEAM);
 		if (arq.exists() && arq.isFile()) {
 			FileInputStream fluxo = new FileInputStream(arq);
 			InputStreamReader leitor = new InputStreamReader(fluxo);
